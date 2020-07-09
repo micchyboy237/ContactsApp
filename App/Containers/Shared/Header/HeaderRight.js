@@ -1,6 +1,7 @@
 import React from 'react'
 import { View } from '../../../Components/Layout'
 import SvgIcon from '../../../Components/SvgIcon'
+import { Image } from '../../../Components/Media'
 import { Metrics } from '../../../Themes'
 import { moderateScale } from 'react-native-size-matters/extend'
 
@@ -13,11 +14,15 @@ const HeaderRight = () => {
     justifyCenter
     alignCenter
     style={{
-      height: 40,
       paddingHorizontal: Metrics.spaceHorizontal
     }}>
       
-      {/* <SvgIcon name="Plus" width={iconSize} height={iconSize}/> */}
+      <Image 
+        resizeMode="contain"
+        width={moderateScale(36)}
+        height='100%'
+        source={{uri: 'http://164.90.176.194:3000/assets/logo.png'}}
+      />
     </View>
   )
 }

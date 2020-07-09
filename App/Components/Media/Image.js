@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
-import { Image } from 'react-native'
+import FastImage from 'react-native-fast-image'
 
-const ImageContainer = props => {
+const FastImageContainer = props => {
   const { style, width, height, ...allProps } = props
   const [imgWidth, setImgWidth] = useState(width)
   const [imgHeight, setImgHeight] = useState(height)
@@ -9,7 +9,7 @@ const ImageContainer = props => {
   const intervalRef = useRef('')
 
   return (
-    <Image
+    <FastImage
       key={reloadKey}
       style={[style, { width: imgWidth, height: imgHeight }]}
       {...allProps}
@@ -29,11 +29,11 @@ const ImageContainer = props => {
   )
 }
 
-ImageContainer.defaultProps = {
+FastImageContainer.defaultProps = {
   resizeMode: 'cover',
   source: {},
   width: 0,
   height: 0
 }
 
-export default ImageContainer
+export default FastImageContainer

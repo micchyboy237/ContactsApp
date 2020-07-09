@@ -19,7 +19,7 @@ const SearchContainer = styled(FormInput)`
   borderRadius: ${moderateScale(24)}px;
   height: ${SEARCH_HEIGHT}px;
   paddingLeft: ${ICON_SIZE + Metrics.spaceHorizontal * 2}px;
-  color: ${Colors.white};
+  color: ${Colors.text};
 `
 
 const Search = React.forwardRef((props, ref) => {  

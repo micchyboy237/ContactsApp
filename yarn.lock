@@ -5810,6 +5810,11 @@ react-native-dotenv@^0.2.0:
   dependencies:
     babel-plugin-dotenv "0.1.1"
 
+react-native-fast-image@^8.1.5:
+  version "8.1.5"
+  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-8.1.5.tgz#0a6404c988dad68c98d26f91155d0a5293ba2ea5"
+  integrity sha512-DoAWGLeQ2hbllummrpXH9B38OgM0TFmNYCF34F90/hdHZirqUtYHzF4QDdb/NV7ebSijHmM3mpkzct8PXtcYyg==
+
 react-native-flipper@^0.34.0:
   version "0.34.0"
   resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.34.0.tgz#7df1f38ba5d97a9321125fe0fccbe47d99e6fa1d"

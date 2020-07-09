@@ -7,13 +7,18 @@ import HeaderLeft from './HeaderLeft'
 import HeaderRight from './HeaderRight'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { ApplicationStyles } from '../../../Themes'
+import { HeaderBackButton } from '@react-navigation/stack'
+import { useNavigation } from '@react-navigation/native'
 
 const HeaderContainer = styled(View)`
   backgroundColor: ${Colors.white};
 `
 
-const Header = () => {
+const Header = props => {
+  const navigation = useNavigation()
+  const { headerTitle, allProps } = props
   const insets = useSafeAreaInsets()
+  const canGoBack = navigation.canGoBack()
 
   return (
     <HeaderContainer
@@ -27,8 +32,9 @@ const Header = () => {
         ...ApplicationStyles.panelHeader
       }}
     >
-      <HeaderLeft />
-      <HeaderRight />      
+      {canGoBack && <HeaderBackButton onPress={() => navigation.goBack()} tintColor={Colors.gray} labelVisible={false} />}
+      <HeaderLeft title={headerTitle} />
+      <HeaderRight />
     </HeaderContainer>
   )
 }
