@@ -23,7 +23,7 @@ const NameLabel = styled(Label)`
 `
 
 const PhoneLabel = styled(Label)`
-  marginTop: ${moderateScale(2)}
+  marginTop: ${moderateScale(2)}px
 `
 
 const Item = props => {

@@ -43,7 +43,7 @@ const ContactsSearchScreen = props => {
         />
       </View>            
       <FlatList
-        keyExtractor={item => item._id}
+        keyExtractor={item => item.id}
         data={data}
         renderItem={({item}) => <ContactItem contact={item} onPress={() => props.navigation.navigate('ContactDetails', item)}/>}
         ListFooterComponent={() => isContactsLoading ? <ActivityIndicator animating={true} size="small"/> : data.length === 0 && <Label center gray>No results found</Label>}

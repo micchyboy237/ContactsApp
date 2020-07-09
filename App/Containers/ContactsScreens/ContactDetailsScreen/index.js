@@ -47,7 +47,7 @@ const ContactDetailsScreen = props => {
         DETAILS.map(detail => {          
           const contactDetail = contact[detail.type]
           return (
-            <DetailContainer>
+            <DetailContainer key={detail.type}>
               <View
                 row
                 justifyBetween
