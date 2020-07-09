@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {FlatList} from 'react-native'
+import {FlatList, ActivityIndicator} from 'react-native'
 import {useSelector} from 'react-redux'
 import Container from '../../Shared/Container'
 import {View} from '../../../Components/Layout'
@@ -13,6 +13,7 @@ import { debounce } from 'lodash'
 import {ContactSelectors} from '../../../Redux/ContactRedux'
 
 const ContactsSearchScreen = props => {
+  const isContactsLoading = useSelector(state => ContactSelectors.isContactsLoading(state))
   const contactsData = useSelector(state => ContactSelectors.getContacts(state))
   const [data, setData] = useState([])
   const [searchText, setSearchText] = useState("")
@@ -45,7 +46,7 @@ const ContactsSearchScreen = props => {
         keyExtractor={item => item._id}
         data={data}
         renderItem={({item}) => <ContactItem contact={item} onPress={() => props.navigation.navigate('ContactDetails', item)}/>}
-        ListFooterComponent={() => data.length === 0 && <Label center gray>No results found</Label>}
+        ListFooterComponent={() => isContactsLoading ? <ActivityIndicator animating={true} size="small"/> : data.length === 0 && <Label center gray>No results found</Label>}
       />
     </Container>
   )

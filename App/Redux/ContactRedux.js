@@ -24,10 +24,12 @@ export const INITIAL_STATE = Immutable({
 /* ------------- Selectors ------------- */
 
 export const getContacts = state => state.contact.contacts
+export const isContactsLoading = state => state.contact.loading
 export const isCreateContactSucceeded = state => state.contact.success
 export const getCreateContactError = state => state.contact.error
 
 export const ContactSelectors = {
+  isContactsLoading,
   getContacts,
   getCreateContactError,
   isCreateContactSucceeded
@@ -38,9 +40,9 @@ export const createContact = state => state.merge({success: false, error: ""})
 export const createContactSuccess = (state, action) => state.merge({ success: true, error: "", contacts: state.contacts.concat(action.contact) })
 export const createContactFailed = (state, action) => state.merge({ error: action.error })
 
-export const getAllContacts = state => state.merge({})
-export const getAllContactsSuccess = (state, action) => state.merge({ contacts: action.contacts })
-export const getAllContactsFailed = (state, action) => state.merge({ error: action.error })
+export const getAllContacts = state => state.merge({ loading: true})
+export const getAllContactsSuccess = (state, action) => state.merge({ loading: false, contacts: action.contacts })
+export const getAllContactsFailed = (state, action) => state.merge({ loading: false, error: action.error })
 
 /* ------------- Hookup Reducers To Types ------------- */
 
