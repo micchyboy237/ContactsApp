@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Basketball",
+    "isVerified": true
+  },
+  {
+    "name": "Bowling",
+    "isVerified": true
+  },
+  {
+    "name": "Chess",
+    "isVerified": true
+  },
+  {
+    "name": "Darts",
+    "isVerified": true
+  },
+  {
+    "name": "Football",
+    "isVerified": true
+  },
+  {
+    "name": "Soccer",
+    "isVerified": true
+  },
+  {
+    "name": "Volleyball",
+    "isVerified": false
+  },
+  {
+    "name": "Hockey",
+    "isVerified": false
+  }
+]

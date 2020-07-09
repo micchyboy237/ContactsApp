@@ -1,0 +1,29 @@
+[{
+  "creationDate": "1592156657",
+  "cropRect": null,
+  "data": null,
+  "exif": null,
+  "filename": "IMG_0010.JPG",
+  "height": 612,
+  "localIdentifier": "CF0EEBA1-1467-4548-ABB7-904A1532184D/L0/001",
+  "mime": "image/jpeg",
+  "modificationDate": "1592156657",
+  "path": "/Users/jethroestradanew/Library/Developer/CoreSimulator/Devices/4846FEF3-806F-459E-8158-11AFF21BA1C9/data/Containers/Data/Application/8CAB362A-A770-4D80-AC4E-3BFF7AE710C9/tmp/react-native-image-crop-picker/B95166AF-DF23-4E3A-AD1F-63E70012BDA2.jpg",
+  "size": 21049,
+  "sourceURL": null,
+  "width": 492
+}, {
+  "creationDate": null,
+  "cropRect": null,
+  "data": null,
+  "exif": null,
+  "filename": "IMG_0020.MP4",
+  "height": 320,
+  "localIdentifier": "60C43AE7-778D-4233-BCBC-F6E6EF4C79CD/L0/001",
+  "mime": "video/mp4",
+  "modificationDate": null,
+  "path": "file:///Users/jethroestradanew/Library/Developer/CoreSimulator/Devices/4846FEF3-806F-459E-8158-11AFF21BA1C9/data/Containers/Data/Application/8CAB362A-A770-4D80-AC4E-3BFF7AE710C9/tmp/react-native-image-crop-picker/CE328624-09C4-4018-8BF4-8CAEBE68AC05.mp4",
+  "size": 793376,
+  "sourceURL": "file:///Users/jethroestradanew/Library/Developer/CoreSimulator/Devices/4846FEF3-806F-459E-8158-11AFF21BA1C9/data/Media/DCIM/100APPLE/IMG_0020.MP4",
+  "width": 568
+}]

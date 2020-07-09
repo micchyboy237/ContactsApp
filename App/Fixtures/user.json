@@ -1,0 +1,12 @@
+{
+  "firstName": "Jethro",
+  "lastName": "Estrada",
+  "email": "jestrada@8weekapp.com",
+  "parentEmail": "parent@email.com",
+  "password": "pass",
+  "confirmPassword": "pass",
+  "yearOfGraduation": 2012,
+  "school": "De La Salle University - Manila",
+  "extraCurricularInSchool": ["Basketball", "Chess"],
+  "extraCurricularOutSchool": ["Tennis"]
+}

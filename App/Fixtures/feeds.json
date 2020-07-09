@@ -1,0 +1,19 @@
+[
+  {
+    "user": {
+      "name": "Jethro Estrada",
+      "role": "student"
+    },
+    "description": "Championship game",
+    "type": "public",
+    "files": [
+      {
+        "name": "championship.png",
+        "type": "image/jpeg",
+        "uri": "https://scontent.fmnl4-2.fna.fbcdn.net/v/t1.0-9/87980136_875864909522985_1057780153570033664_o.jpg?_nc_cat=105&_nc_sid=8bfeb9&_nc_oc=AQndmnzAfWyDJFPC-xX-2nZPi9zhusCba1mfZPUlOzuUNUxk74MZ_uTW1Y1Ut5X-ItBX6kEAzOfe-bC4sGTQGBW3&_nc_ht=scontent.fmnl4-2.fna&oh=1645d5c72b790eb77a8822b698f46e09&oe=5F08EAD6",
+        "width": 480,
+        "height": 320        
+      }
+    ]
+  }
+]
