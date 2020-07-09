@@ -46,7 +46,7 @@ const ContactsSearchScreen = props => {
         keyExtractor={item => item._id}
         data={data}
         renderItem={({item}) => <ContactItem contact={item} onPress={() => props.navigation.navigate('ContactDetails', item)}/>}
-        ListFooterComponent={() => isContactsLoading ? <ActivityIndicator animating={true} size="small"/> : data.length === 0 && <Label center gray>No results found</Label>}
+        ListFooterComponent={() => isContactsLoading ? <ActivityIndicator animating={true} size="small"/> : contactsData.length === 0 && <Label center gray>No results found</Label>}
       />
     </Container>
   )
