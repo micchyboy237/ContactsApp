@@ -5,7 +5,6 @@ import {
 } from 'react-native'
 import styled from 'styled-components'
 import { Colors, ApplicationStyles } from '../../Themes'
-import { Label } from '../../Components/Text'
 import { moderateScale } from 'react-native-size-matters/extend'
 
 const { height } = ApplicationStyles.formRow
@@ -14,10 +13,9 @@ const INPUT_HEIGHT = moderateScale(height, 0.3)
 const InputContainer = styled.TextInput`
   fontSize: ${moderateScale(14, 0.3)}px;
   backgroundColor: white;
-  ${props => !props.noBorder && `borderWidth: 1px; borderColor: ${Colors.border}; borderRadius: 8px;`};
+  ${props => !props.noBorder && `borderBottomWidth: 1px; borderBottomColor: ${Colors.text};`};
   width: 100%;
   height: ${INPUT_HEIGHT}px;
-  paddingLeft: ${moderateScale(18, 0.3)}px;
 `
 
 const InputView = styled.View`
@@ -27,7 +25,7 @@ const InputView = styled.View`
 
 const FormInput = React.forwardRef((props, ref) => {
   const inputRef = useRef(null)
-  const { children, containerStyle, onChangeText, noMargin, noBorder, label, labelStyle, ...allProps } = props
+  const { children, containerStyle, onChangeText, noMargin, noBorder, ...allProps } = props
 
   const onChangeTextFn = text => {
     onChangeText && onChangeText(text)
@@ -51,12 +49,6 @@ const FormInput = React.forwardRef((props, ref) => {
 
   return (
     <>
-      {
-        !!label &&
-          <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-            <Label weight='medium' style={labelStyle}>{label}</Label>
-          </TouchableWithoutFeedback>
-      }
       <InputView style={containerStyle} noMargin={noMargin}>
         <InputContainer
           ref={inputRef}
@@ -72,9 +64,6 @@ const FormInput = React.forwardRef((props, ref) => {
 
 FormInput.defaultProps = {
   containerStyle: {},
-  labelStyle: {
-    marginBottom: moderateScale(6)
-  },
   placeholderTextColor: Colors.lightGray,
   autoCapitalize: 'none',
   autoCompleteType: 'off',

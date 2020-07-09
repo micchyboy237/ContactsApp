@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {FlatList} from 'react-native'
+import {useSelector} from 'react-redux'
 import Container from '../../Shared/Container'
 import {View} from '../../../Components/Layout'
 import {Metrics} from '../../../Themes'
@@ -9,30 +10,13 @@ import ContactItem from './ContactItem'
 import { moderateScale } from 'react-native-size-matters/extend'
 import { DETAILS } from '../ContactDetailsScreen'
 import { debounce } from 'lodash'
-
-const SAMPLE_DATA = [
-  {
-    _id: "5f063d82bdf6556b8c7887dc",
-    firstName: "Jethro",
-    lastName: "Estrada",
-    companyName: "Amazon",
-    email: "jethroestrada237@gmail.com",
-    phoneNumber: 639159897270
-  },
-  {
-    _id: "5f063d82bdf6556b8c7887d2",
-    firstName: "Lebron",
-    lastName: "James",
-    companyName: "Amazon",
-    email: "jethroestrada237@gmail.com",
-    phoneNumber: 639225913204
-  }
-]
+import {ContactSelectors} from '../../../Redux/ContactRedux'
 
 const ContactsSearchScreen = props => {
-  const [data, setData] = useState(SAMPLE_DATA)
+  const contactsData = useSelector(state => ContactSelectors.getContacts(state))
+  const [data, setData] = useState(contactsData)
   const onSearch = debounce(text => {
-    setData(SAMPLE_DATA.filter(contact => {
+    setData(contactsData.filter(contact => {
       return DETAILS.some(detail => {
         const contactDetail = contact[detail.type]
 

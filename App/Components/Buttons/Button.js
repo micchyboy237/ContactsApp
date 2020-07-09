@@ -8,7 +8,7 @@ import { Label } from '../../Components/Text'
 import { moderateScale } from 'react-native-size-matters/extend'
 
 const ButtonContainer = styled.TouchableHighlight`
-  backgroundColor: ${Colors.purple};
+  backgroundColor: ${Colors.primary};
   borderRadius: 10px;
   width: 100%;
   height: ${moderateScale(48, 0.3)}px;
@@ -51,7 +51,7 @@ Button.defaultProps = {
     color: Colors.white,
     letterSpacing: 1.4
   },
-  underlayColor: Colors.darkPurple,
+  underlayColor: Colors.secondary,
   disabled: false
 }
 

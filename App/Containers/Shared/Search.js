@@ -7,6 +7,7 @@ import {View} from '../../Components/Layout'
 import { Colors, ApplicationStyles, Metrics } from '../../Themes'
 import { moderateScale } from 'react-native-size-matters/extend'
 import styled from 'styled-components'
+import { useNavigation } from '@react-navigation/native'
 
 const { height } = ApplicationStyles.formRow
 const SEARCH_HEIGHT = moderateScale(height, 0.3)
@@ -23,6 +24,7 @@ const SearchContainer = styled(FormInput)`
 `
 
 const Search = React.forwardRef((props, ref) => {  
+  const navigation = useNavigation()
 
   return (
     <SearchContainer
@@ -43,6 +45,7 @@ const Search = React.forwardRef((props, ref) => {
       </View>
 
       <TouchableOpacity 
+      onPress={() => navigation.navigate('ContactAdd')}
       pointerEvents="none"
       style={{
         position: 'absolute',

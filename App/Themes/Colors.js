@@ -11,7 +11,8 @@ const colors = {
   gray: '#AAAAAA',
   lightGray: '#CCCCCC',
   lighterGray: '#DDDDDD',
-  lightestGray: '#EEEEEE'
+  lightestGray: '#EEEEEE',
+  error: '#FF4444',
 }
 
 export default colors

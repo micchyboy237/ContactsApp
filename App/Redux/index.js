@@ -7,6 +7,7 @@ import ReduxPersist from '../Config/ReduxPersist'
 /* ------------- Assemble The Reducers ------------- */
 export const reducers = combineReducers({
   startup: require('./StartupRedux').reducer,
+  contact: require('./ContactRedux').reducer,
 })
 
 export default () => {
