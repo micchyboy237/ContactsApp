@@ -16,7 +16,7 @@ export function * getAllContacts (api, action) {
 }
 
 export function * createContact (api, action) {
-  const details = action
+  const {details} = action
   const response = yield call(api.createContact, details)
 
   console.tron.log('createContact', response)

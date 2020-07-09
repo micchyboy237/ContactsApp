@@ -16,7 +16,7 @@ const create = (baseURL = `${API_URL}/v1/`) => {
     timeout: 60000
   })
 
-  const createContact = (details) => api.post('contacts', details)
+  const createContact = (details) => api.post('contacts', {...details})
   const getAllContacts = () => api.get('contacts')
 
   return {

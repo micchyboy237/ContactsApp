@@ -5,7 +5,7 @@ import Immutable from 'seamless-immutable'
 
 const { Types, Creators } = createActions({
   createContact: ['details'],
-  createContactSuccess: ['contacts'],
+  createContactSuccess: ['contact'],
   createContactFailed: ['error'],
   getAllContacts: null,
   getAllContactsSuccess: ['contacts'],
@@ -34,8 +34,8 @@ export const ContactSelectors = {
 }
 
 /* ------------- Reducers ------------- */
-export const createContact = state => state.merge({})
-export const createContactSuccess = (state, action) => state.merge({ contacts: action.contacts })
+export const createContact = state => state.merge({success: false, error: ""})
+export const createContactSuccess = (state, action) => state.merge({ success: true, error: "", contacts: state.contacts.concat(action.contact) })
 export const createContactFailed = (state, action) => state.merge({ error: action.error })
 
 export const getAllContacts = state => state.merge({})

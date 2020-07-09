@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import {
   ScrollView
 } from 'react-native'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Container from '../../Shared/Container'
 import { Content, View } from '../../../Components/Layout'
 import { Heading, SubHeading, ErrorMessage } from '../../../Components/Text'
@@ -14,6 +14,7 @@ import { Formik } from 'formik'
 import ContactActions, { ContactSelectors } from '../../../Redux/ContactRedux'
 
 const ContactAddScreen = props => {
+  const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(false)
   const lastNameRef = useRef()
   const companyNameRef = useRef()
@@ -27,10 +28,10 @@ const ContactAddScreen = props => {
 
   useEffect(() => {
     if (isCreateContactSucceeded) {
-      props.navigation.navigate('ContactSearch')
-    } else if (contactError) {
-      setIsLoading(false)
+      props.navigation.navigate('ContactsSearch')
     }
+
+    setIsLoading(false)
   }, [isCreateContactSucceeded, contactError])
 
 
@@ -47,10 +48,11 @@ const ContactAddScreen = props => {
             validateOnChange={false}
             validateOnBlur={false}
             onSubmit={values => {
-              
+              setIsLoading(true)
+              dispatch(ContactActions.createContact(values))
             }}
           >
-            {({ handleChange, values, handleSubmit, errors }) => (
+            {({ handleChange, values, handleSubmit, errors, setFieldValue }) => (
               <>
                 <FormInput
                   autoFocus
@@ -125,6 +127,7 @@ const ContactAddScreen = props => {
                     onPress={handleSubmit}
                     label='NEXT'
                   />
+                  <ErrorMessage center>{contactError}</ErrorMessage>
                 </View>
               </>
             )}

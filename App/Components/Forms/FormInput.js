@@ -24,34 +24,17 @@ const InputView = styled.View`
 `
 
 const FormInput = React.forwardRef((props, ref) => {
-  const inputRef = useRef(null)
   const { children, containerStyle, onChangeText, noMargin, noBorder, ...allProps } = props
 
   const onChangeTextFn = text => {
     onChangeText && onChangeText(text)
   }
-
-  React.useImperativeHandle(
-    ref,
-    () => {
-      const inputCurrent = inputRef.current
-
-      return {
-        ...inputCurrent,
-        clear: () => {
-          inputCurrent.clear()
-          onChangeTextFn('')
-        }
-      }
-    },
-    []
-  )
-
+  
   return (
     <>
       <InputView style={containerStyle} noMargin={noMargin}>
         <InputContainer
-          ref={inputRef}
+          ref={ref}
           onChangeText={onChangeTextFn}
           noBorder={noBorder}
           {...allProps}
